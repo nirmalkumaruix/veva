@@ -1,0 +1,1 @@
+package com.veetu.vadagai.common;import jakarta.persistence.*;import lombok.*;@Entity @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor public class AuditLog extends BaseEntity{private String actorEmail;private String action;private String entityName;private String entityId;@Column(length=4000) private String metadata;}

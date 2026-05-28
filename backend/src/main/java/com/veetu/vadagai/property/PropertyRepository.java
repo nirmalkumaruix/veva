@@ -1,0 +1,1 @@
+package com.veetu.vadagai.property;import org.springframework.data.domain.*;import org.springframework.data.jpa.repository.JpaRepository;import java.util.UUID;public interface PropertyRepository extends JpaRepository<Property,UUID>{Page<Property> findByOwnerIdAndDeletedFalse(UUID ownerId,Pageable p);long countByDeletedFalse();long countByOccupiedTrueAndDeletedFalse();}

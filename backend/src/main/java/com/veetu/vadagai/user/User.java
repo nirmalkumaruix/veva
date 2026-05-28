@@ -1,0 +1,4 @@
+package com.veetu.vadagai.user;
+import com.veetu.vadagai.common.BaseEntity;import jakarta.persistence.*;import lombok.*;import java.time.Instant;import java.util.*;
+@Entity @Table(name="users",indexes={@Index(name="idx_users_email",columnList="email",unique=true)}) @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+public class User extends BaseEntity{ @Column(nullable=false,unique=true) private String email; @Column(nullable=false) private String passwordHash; @Column(nullable=false) private String fullName; private String mobile; @ElementCollection(fetch=FetchType.EAGER) @CollectionTable(name="user_roles",joinColumns=@JoinColumn(name="user_id")) @Enumerated(EnumType.STRING) @Column(name="role") private Set<Role> roles=new HashSet<>(); @Column(nullable=false) private boolean emailVerified; @Column(nullable=false) private boolean accountLocked; private String otpHash; private Instant otpExpiresAt; }
