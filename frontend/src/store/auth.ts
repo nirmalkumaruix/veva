@@ -1,0 +1,3 @@
+import { create } from 'zustand';
+type AuthState={token:string|null;fullName:string|null;roles:string[];setAuth:(token:string,fullName:string,roles:string[])=>void;logout:()=>void};
+export const useAuth=create<AuthState>((set)=>({token:localStorage.getItem('accessToken'),fullName:localStorage.getItem('fullName'),roles:JSON.parse(localStorage.getItem('roles')??'[]'),setAuth:(token,fullName,roles)=>{localStorage.setItem('accessToken',token);localStorage.setItem('fullName',fullName);localStorage.setItem('roles',JSON.stringify(roles));set({token,fullName,roles});},logout:()=>{localStorage.clear();set({token:null,fullName:null,roles:[]});}}));
