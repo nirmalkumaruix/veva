@@ -1,2 +1,0 @@
-package com.veetu.vadagai.notification;import com.veetu.vadagai.common.BaseEntity;import com.veetu.vadagai.user.User;import jakarta.persistence.*;import lombok.*;
-@Entity @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor public class Notification extends BaseEntity{ @ManyToOne(optional=false) private User recipient; @Column(nullable=false) private String title; @Column(nullable=false,length=2000) private String message; @Column(nullable=false) private String channel; @Column(nullable=false) private boolean readFlag; }

@@ -1,2 +1,0 @@
-package com.veetu.vadagai.tenant;import com.veetu.vadagai.common.BaseEntity;import com.veetu.vadagai.property.Property;import com.veetu.vadagai.user.User;import jakarta.persistence.*;import lombok.*;import java.time.LocalDate;
-@Entity @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor public class TenantProfile extends BaseEntity{ @OneToOne(optional=false) private User user; @ManyToOne(optional=false) private Property property; private String emergencyContact; private String kycDocumentUrl; private LocalDate moveInDate; }

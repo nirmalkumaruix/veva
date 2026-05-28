@@ -1,4 +1,0 @@
-spring:
-  jpa.show-sql: false
-server.forward-headers-strategy: framework
-logging.level.org.springframework.security: INFO
