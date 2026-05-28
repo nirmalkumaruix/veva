@@ -1,1 +1,0 @@
-package com.veetu.vadagai;import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.assertNotNull;class VeetuVadagaiApplicationTests{@Test void applicationClassExists(){assertNotNull(VeetuVadagaiApplication.class);}}

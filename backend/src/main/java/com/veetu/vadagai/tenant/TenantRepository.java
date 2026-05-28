@@ -1,1 +1,0 @@
-package com.veetu.vadagai.tenant;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface TenantRepository extends JpaRepository<TenantProfile,UUID>{long countByDeletedFalse();List<TenantProfile> findByPropertyOwnerIdAndDeletedFalse(UUID ownerId);Optional<TenantProfile> findByUserEmailIgnoreCaseAndDeletedFalse(String email);}

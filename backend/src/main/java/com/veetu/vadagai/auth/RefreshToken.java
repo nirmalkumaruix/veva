@@ -1,2 +1,0 @@
-package com.veetu.vadagai.auth;import com.veetu.vadagai.common.BaseEntity;import com.veetu.vadagai.user.User;import jakarta.persistence.*;import lombok.*;import java.time.Instant;
-@Entity @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor public class RefreshToken extends BaseEntity{ @ManyToOne(optional=false) private User user; @Column(nullable=false,unique=true,length=500) private String token; @Column(nullable=false) private Instant expiresAt; @Column(nullable=false) private boolean revoked; }

@@ -1,2 +1,0 @@
-package com.veetu.vadagai.invoice;import com.veetu.vadagai.common.BaseEntity;import com.veetu.vadagai.payment.Payment;import jakarta.persistence.*;import lombok.*;import java.time.LocalDate;
-@Entity @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor public class Invoice extends BaseEntity{ @OneToOne(optional=false) private Payment payment; @Column(nullable=false,unique=true) private String invoiceNumber; @Column(nullable=false) private LocalDate issuedDate; @Column(nullable=false) private LocalDate dueDate; private String pdfUrl; }
